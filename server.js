@@ -9,6 +9,7 @@ require("dotenv").config()
 // routes
 const user = require("./routes/user.js")
 const form = require("./routes/form.js")
+const kyc = require("./routes/KYCandBVN.js")
 
 // middleware
 app.use(cors({origin: true, credentials: true}));
@@ -20,11 +21,11 @@ mongoose.connect(process.env.DATABASE, { useNewUrlParser: true, useUnifiedTopolo
 .then(() => console.log("Connected to DB"))
 .catch(err => console.log(err))
 
-
 // router middleware
 app.use(express.json());
 app.use('/api', user);
 app.use('/api', form);
+app.use('/api', kyc);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {

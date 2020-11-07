@@ -18,8 +18,6 @@ router.post('/contact', (req, res) => {
     ${message}
   `;
 
-  // / async..await is not allowed in global scope, must use a wrapper
-
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
