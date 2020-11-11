@@ -4,9 +4,11 @@ const mysql = require('mysql');
 
 const connection = mysql.createConnection({
   host: 'localhost',
-  user: 'mipplePayment',
+  user: 'root',
   database: 'paymentsite',
-  password: 'mipplepay123@'
+  password: ''
+  //user: 'mipplePayment',
+  //password: 'mipplepay123@'
 });
 
 // Connect

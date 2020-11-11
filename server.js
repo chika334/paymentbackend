@@ -12,7 +12,7 @@ require("dotenv").config()
 //const user = require("./routes/user.js")
 const user = require("./routes/userRoutes.js")
 //const form = require("./routes/form.js")
-//const kyc = require("./routes/KYCandBVN.js")
+const kyc = require("./routes/company.js")
 
 // middleware
 app.use(cors({origin: true, credentials: true}));
@@ -24,7 +24,7 @@ app.use(morgan('dev'))
 app.use(express.json());
 app.use('/api', user);
 //app.use('/api', form);
-//app.use('/api', kyc);
+app.use('/api', kyc);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
